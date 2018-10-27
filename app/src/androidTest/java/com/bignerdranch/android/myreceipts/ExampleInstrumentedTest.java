@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.bignerdranch.android.criminalintent", appContext.getPackageName());
+        assertEquals("com.bignerdranch.android.myreceipts", appContext.getPackageName());
     }
 }
