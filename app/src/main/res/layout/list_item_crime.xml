@@ -11,6 +11,11 @@
         android:layout_height="wrap_content"
         android:text="Crime Title"/>
     <TextView
+        android:id="@+id/crime_shop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Crime Shop"/>
+    <TextView
         android:id="@+id/crime_date"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

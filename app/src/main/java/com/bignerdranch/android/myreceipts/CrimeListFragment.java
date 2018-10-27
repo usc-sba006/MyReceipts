@@ -116,6 +116,7 @@ public class CrimeListFragment extends Fragment {
 
     private class CrimeHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         private TextView mTitleTextView;
+        private TextView mShopTextView;
         private TextView mDateTextView;
         private Crime mCrime;
 
@@ -124,12 +125,14 @@ public class CrimeListFragment extends Fragment {
             itemView.setOnClickListener(this);
 
             mTitleTextView = (TextView) itemView.findViewById(R.id.crime_title);
+            mShopTextView = (TextView) itemView.findViewById(R.id.crime_shop);
             mDateTextView = (TextView) itemView.findViewById(R.id.crime_date);
         }
 
         public void bind(Crime crime) {
             mCrime = crime;
             mTitleTextView.setText(mCrime.getTitle());
+            mShopTextView.setText(mCrime.getShop());
             mDateTextView.setText(mCrime.getDate().toString());
         }
 
