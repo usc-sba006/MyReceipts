@@ -43,9 +43,8 @@ public class CrimeFragment extends Fragment {
     private Crime mCrime;
     private File mPhotoFile;
     private EditText mTitleField;
+    private EditText mShopField; //edit
     private Button mDateButton;
-    private CheckBox mSolvedCheckBox;
-    private Button mSuspectButton;
     private Button mReportButton;
     private ImageButton mPhotoButton;
     private ImageView mPhotoView;
@@ -97,6 +96,26 @@ public class CrimeFragment extends Fragment {
             }
         });
 
+        //edit
+        mShopField = (EditText) v.findViewById(R.id.crime_shop);
+        mShopField.setText(mCrime.getShop());
+        mShopField.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(
+                    CharSequence s, int start, int count, int after) {
+                // This space intentionally left blank
+            }
+            @Override
+            public void onTextChanged(
+                    CharSequence s, int start, int before, int count) {
+                mCrime.setShop(s.toString());
+            }
+            @Override
+            public void afterTextChanged(Editable s) {
+                // This one too
+            }
+        });
+
         mDateButton = (Button) v.findViewById(R.id.crime_date);
         updateDate();
 
@@ -108,16 +127,6 @@ public class CrimeFragment extends Fragment {
                         .newInstance(mCrime.getDate());
                 dialog.setTargetFragment(CrimeFragment.this, REQUEST_DATE);
                 dialog.show(manager, DIALOG_DATE);
-            }
-        });
-
-        mSolvedCheckBox = (CheckBox)v.findViewById(R.id.crime_solved);
-        mSolvedCheckBox.setChecked(mCrime.isSolved());
-        mSolvedCheckBox.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView,
-                                         boolean isChecked) {
-                mCrime.setSolved(isChecked);
             }
         });
 
@@ -135,23 +144,7 @@ public class CrimeFragment extends Fragment {
             }
         });
 
-        final Intent pickContact = new Intent(Intent.ACTION_PICK,
-                ContactsContract.Contacts.CONTENT_URI);
-        mSuspectButton = (Button) v.findViewById(R.id.crime_suspect);
-        mSuspectButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                startActivityForResult(pickContact, REQUEST_CONTACT);
-            }
-        });
-        if (mCrime.getSuspect() != null) {
-            mSuspectButton.setText(mCrime.getSuspect());
-        }
-
         PackageManager packageManager = getActivity().getPackageManager();
-        if (packageManager.resolveActivity(pickContact,
-                PackageManager.MATCH_DEFAULT_ONLY) == null) {
-            mSuspectButton.setEnabled(false);
-        }
 
         mPhotoButton = (ImageButton) v.findViewById(R.id.crime_camera);
 
@@ -214,9 +207,6 @@ public class CrimeFragment extends Fragment {
                 // Pull out the first column of the first row of data -
                 // that is your suspect's name
                 c.moveToFirst();
-                String suspect = c.getString(0);
-                mCrime.setSuspect(suspect);
-                mSuspectButton.setText(suspect);
             } finally {
                 c.close();
             }
@@ -237,23 +227,11 @@ public class CrimeFragment extends Fragment {
     }
 
     private String getCrimeReport() {
-        String solvedString = null;
-        if (mCrime.isSolved()) {
-            solvedString = getString(R.string.crime_report_solved);
-        } else {
-            solvedString = getString(R.string.crime_report_unsolved);
-        }
         String dateFormat = "EEE, MMM dd";
         String dateString = DateFormat.format(dateFormat,
                 mCrime.getDate()).toString();
-        String suspect = mCrime.getSuspect();
-        if (suspect == null) {
-            suspect = getString(R.string.crime_report_no_suspect);
-        } else {
-            suspect = getString(R.string.crime_report_suspect, suspect);
-        }
         String report = getString(R.string.crime_report,
-                mCrime.getTitle(), dateString, solvedString, suspect);
+                mCrime.getTitle(), dateString);
         return report;
     }
 
