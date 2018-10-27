@@ -21,7 +21,7 @@ public class ReceiptListFragment extends Fragment {
 
     private RecyclerView mReceiptRecyclerView;
     private ReceiptAdapter mAdapter;
-    private boolean mSubtitleVisible;
+//    private boolean mSubtitleVisible;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -38,9 +38,9 @@ public class ReceiptListFragment extends Fragment {
                 .findViewById(R.id.receipt_recycler_view);
         mReceiptRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
-        if (savedInstanceState != null) {
-            mSubtitleVisible = savedInstanceState.getBoolean(SAVED_SUBTITLE_VISIBLE);
-        }
+//        if (savedInstanceState != null) {
+//            mSubtitleVisible = savedInstanceState.getBoolean(SAVED_SUBTITLE_VISIBLE);
+//        }
 
         updateUI();
 
@@ -58,12 +58,12 @@ public class ReceiptListFragment extends Fragment {
         super.onCreateOptionsMenu(menu, inflater);
         inflater.inflate(R.menu.fragment_receipt_list, menu);
 
-        MenuItem subtitleItem = menu.findItem(R.id.show_subtitle);
-        if (mSubtitleVisible) {
-            subtitleItem.setTitle(R.string.hide_subtitle);
-        } else {
-            subtitleItem.setTitle(R.string.show_subtitle);
-        }
+//        MenuItem subtitleItem = menu.findItem(R.id.show_subtitle);
+//        if (mSubtitleVisible) {
+//            subtitleItem.setTitle(R.string.hide_subtitle);
+//        } else {
+//            subtitleItem.setTitle(R.string.show_subtitle);
+//        }
     }
 
     @Override
@@ -76,11 +76,11 @@ public class ReceiptListFragment extends Fragment {
                         .newIntent(getActivity(), receipt.getId());
                 startActivity(intent);
                 return true;
-            case R.id.show_subtitle:
-                mSubtitleVisible = !mSubtitleVisible;
-                getActivity().invalidateOptionsMenu();
-                updateSubtitle();
-                return true;
+//            case R.id.show_subtitle:
+//                mSubtitleVisible = !mSubtitleVisible;
+//                getActivity().invalidateOptionsMenu();
+//                updateSubtitle();
+//                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
@@ -91,9 +91,9 @@ public class ReceiptListFragment extends Fragment {
         int receiptCount = receiptLab.getReceipts().size();
         String subtitle = getString(R.string.subtitle_format, receiptCount);
 
-        if (!mSubtitleVisible) {
-            subtitle = null;
-        }
+//        if (!mSubtitleVisible) {
+//            subtitle = null;
+//        }
 
         AppCompatActivity activity = (AppCompatActivity) getActivity();
         activity.getSupportActionBar().setSubtitle(subtitle);
@@ -172,9 +172,9 @@ public class ReceiptListFragment extends Fragment {
         }
     }
 
-    @Override
-    public void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
-        outState.putBoolean(SAVED_SUBTITLE_VISIBLE, mSubtitleVisible);
-    }
+//    @Override
+//    public void onSaveInstanceState(Bundle outState) {
+//        super.onSaveInstanceState(outState);
+//        outState.putBoolean(SAVED_SUBTITLE_VISIBLE, mSubtitleVisible);
+//    }
 }

@@ -11,7 +11,7 @@
     <string name="new_receipt">New Receipt</string>
     <string name="show_subtitle">Show Subtitle</string>
     <string name="hide_subtitle">Hide Subtitle</string>
-    <string name="subtitle_format">%1$d receipts</string>
+    <string name="subtitle_format">%1$d receipt(s)</string>
     <string name="receipt_report_text">Send Receipt Report</string>
     <string name="receipt_report">The receipt "%1$s" was received from a purchase made on %2$s.</string>
     <string name="receipt_report_subject">MyReceipts - Receipt Report</string>
