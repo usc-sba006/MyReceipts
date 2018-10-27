@@ -57,6 +57,7 @@ public class ReceiptFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         UUID receiptId = (UUID) getArguments().getSerializable(ARG_RECEIPT_ID);
         mReceipt = ReceiptLab.get(getActivity()).getReceipt(receiptId);
         mPhotoFile = ReceiptLab.get(getActivity()).getPhotoFile(mReceipt);
