@@ -3,7 +3,7 @@ package com.bignerdranch.android.myreceipts;
 import java.util.Date;
 import java.util.UUID;
 
-public class Crime {
+public class Receipt {
     private UUID mId;
     private String mTitle;
     private String mShop; //edit
@@ -13,11 +13,11 @@ public class Crime {
         return mId;
     }
 
-    public Crime() {
+    public Receipt() {
         this(UUID.randomUUID());
     }
 
-    public Crime(UUID id) {
+    public Receipt(UUID id) {
         mId = id;
         mDate = new Date();
     }

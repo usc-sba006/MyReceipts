@@ -1,7 +1,7 @@
 package database;
 
-public class CrimeDbSchema {
-    public static final class CrimeTable {
+public class ReceiptDbSchema {
+    public static final class ReceiptTable {
         public static final String NAME = "receipts";
 
         public static final class Cols {

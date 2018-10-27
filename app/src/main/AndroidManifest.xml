@@ -13,15 +13,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.bignerdranch.android.myreceipts.CrimeListActivity">
+        <activity android:name="com.bignerdranch.android.myreceipts.ReceiptListActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:name="com.bignerdranch.android.myreceipts.CrimePagerActivity"
-            android:parentActivityName="com.bignerdranch.android.myreceipts.CrimeListActivity">
+            android:name="com.bignerdranch.android.myreceipts.ReceiptPagerActivity"
+            android:parentActivityName="com.bignerdranch.android.myreceipts.ReceiptListActivity">
         </activity>
 
         <provider

@@ -4,24 +4,24 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import database.CrimeDbSchema.CrimeTable;
+import database.ReceiptDbSchema.ReceiptTable;
 
-public class CrimeBaseHelper extends SQLiteOpenHelper {
+public class ReceiptBaseHelper extends SQLiteOpenHelper {
     private static final int VERSION = 1;
-    private static final String DATABASE_NAME = "crimeBase.db";
+    private static final String DATABASE_NAME = "receiptBase.db";
 
-    public CrimeBaseHelper(Context context) {
+    public ReceiptBaseHelper(Context context) {
         super(context, DATABASE_NAME, null, VERSION);
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("create table " + CrimeTable.NAME + "(" +
+        db.execSQL("create table " + ReceiptTable.NAME + "(" +
                 " _id integer primary key autoincrement, " +
-                CrimeTable.Cols.UUID + ", " +
-                CrimeTable.Cols.TITLE + ", " +
-                CrimeTable.Cols.SHOP + ", " + //edit
-                CrimeTable.Cols.DATE +
+                ReceiptTable.Cols.UUID + ", " +
+                ReceiptTable.Cols.TITLE + ", " +
+                ReceiptTable.Cols.SHOP + ", " + //edit
+                ReceiptTable.Cols.DATE +
                 ")");
     }
 
