@@ -253,9 +253,11 @@ public class ReceiptFragment extends Fragment {
         mMapButton.setOnClickListener(new View.OnClickListener() {
            public void onClick(View v) {
                Intent i = new Intent(getActivity(), MapsActivity.class);
-//               i.putExtra(Intent.EXTRA_LATITUDE, mReceipt.getLatitude());
-//               i.putExtra(Intent.EXTRA_LONGITUDE, mReceipt.getLongitude());
+               i.putExtra("latitude", mReceipt.getLatitude());
+               i.putExtra("longitude", mReceipt.getLongitude());
                startActivity(i);
+               //updateLatitude();  //if the requirements had us update the text view
+               //updateLongitude(); //if the requirements had us update the text view
            }
         });
 
@@ -320,13 +322,13 @@ public class ReceiptFragment extends Fragment {
 
     private void updateLatitude() {
         String latitudeString = getString(R.string.receipt_latitude,
-                Long.toString(mReceipt.getLatitude()));
+                Double.toString(mReceipt.getLatitude()));
         mLatitudeView.setText(latitudeString);
     }
 
     private void updateLongitude() {
         String longitudeString = getString(R.string.receipt_longitude,
-                Long.toString(mReceipt.getLongitude()));
+                Double.toString(mReceipt.getLongitude()));
         mLongitudeView.setText(longitudeString);
     }
 

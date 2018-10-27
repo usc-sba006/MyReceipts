@@ -9,8 +9,8 @@ public class Receipt {
     private String mShop; //edit
     private String mComment; //edit2
     private Date mDate;
-    private long mLatitude;
-    private long mLongitude;
+    private double mLatitude;
+    private double mLongitude;
 
     public UUID getId() {
         return mId;
@@ -47,13 +47,25 @@ public class Receipt {
         this.mDate = mDate;
     }
 
-    public long getLatitude() { return mLatitude; }
+    public double getLatitude() { return mLatitude; }
 
-    public void setLatitude(long mLatitude) { this.mLatitude = mLatitude; }
+    public void setLatitude(double mLatitude) {
+        if (mLatitude < 0.01 && mLatitude > -0.01) {
+            this.mLatitude = -27.5; //if the latitude has not been edited, it is set to Brisbane by default
+        } else {
+            this.mLatitude = mLatitude;
+        }
+    }
 
-    public long getLongitude() { return mLongitude; }
+    public double getLongitude() { return mLongitude; }
 
-    public void setLongitude(long mLongitude) { this.mLongitude = mLongitude; }
+    public void setLongitude(double mLongitude) {
+        if (mLongitude < 0.01 && mLongitude > -0.01) {
+            this.mLongitude = 153.0; //if the longitude has not been edited, it is set to Brisbane by default
+        } else {
+            this.mLongitude = mLongitude;
+        }
+    }
 
     public String getPhotoFilename() {
         return "IMG_" + getId().toString() + ".jpg";
