@@ -8,6 +8,7 @@ public class ReceiptDbSchema {
             public static final String UUID = "uuid";
             public static final String TITLE = "title";
             public static final String SHOP = "shop"; //edit
+            public static final String COMMENT = "comment"; //edit2
             public static final String DATE = "date";
         }
     }

@@ -7,6 +7,7 @@ public class Receipt {
     private UUID mId;
     private String mTitle;
     private String mShop; //edit
+    private String mComment; //edit2
     private Date mDate;
 
     public UUID getId() {
@@ -33,6 +34,10 @@ public class Receipt {
     public String getShop() { return mShop; } //edit
 
     public void setShop(String mShop) { this.mShop = mShop; } //edit
+
+    public String getComment() { return mComment; } //edit2
+
+    public void setComment(String mComment) { this.mComment = mComment; } //edit2
 
     public Date getDate() { return mDate; }
 

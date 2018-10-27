@@ -40,6 +40,7 @@ public class ReceiptFragment extends Fragment {
     private File mPhotoFile;
     private EditText mTitleField;
     private EditText mShopField; //edit
+    private EditText mCommentField; //edit2
     private Button mDateButton;
     private Button mReportButton;
     private ImageButton mPhotoButton;
@@ -105,6 +106,26 @@ public class ReceiptFragment extends Fragment {
             public void onTextChanged(
                     CharSequence s, int start, int before, int count) {
                 mReceipt.setShop(s.toString());
+            }
+            @Override
+            public void afterTextChanged(Editable s) {
+                // This one too
+            }
+        });
+
+        //edit2
+        mCommentField = (EditText) v.findViewById(R.id.receipt_comment);
+        mCommentField.setText(mReceipt.getComment());
+        mCommentField.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(
+                    CharSequence s, int start, int count, int after) {
+                // This space intentionally left blank
+            }
+            @Override
+            public void onTextChanged(
+                    CharSequence s, int start, int before, int count) {
+                mReceipt.setComment(s.toString());
             }
             @Override
             public void afterTextChanged(Editable s) {

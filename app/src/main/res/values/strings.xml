@@ -4,6 +4,8 @@
     <string name="receipt_title_label">Receipt Title</string>
     <string name="receipt_shop_hint">Enter the name of the shop.</string>
     <string name="receipt_shop_label">Shop Name</string>
+    <string name="receipt_comment_hint">Enter a comment on this receipt.</string>
+    <string name="receipt_comment_label">Comment</string>
     <string name="receipt_details_label">Details</string>
     <string name="date_picker_title">Date of purchase:</string>
     <string name="new_receipt">New Receipt</string>

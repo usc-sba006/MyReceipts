@@ -100,6 +100,7 @@ public class ReceiptLab {
         values.put(ReceiptDbSchema.ReceiptTable.Cols.UUID, receipt.getId().toString());
         values.put(ReceiptDbSchema.ReceiptTable.Cols.TITLE, receipt.getTitle());
         values.put(ReceiptDbSchema.ReceiptTable.Cols.SHOP, receipt.getShop()); //edit
+        values.put(ReceiptDbSchema.ReceiptTable.Cols.COMMENT, receipt.getComment()); //edit2
         values.put(ReceiptDbSchema.ReceiptTable.Cols.DATE, receipt.getDate().getTime());
 
         return values;

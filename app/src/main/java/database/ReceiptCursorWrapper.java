@@ -17,11 +17,13 @@ public class ReceiptCursorWrapper extends CursorWrapper {
         String uuidString = getString(getColumnIndex(ReceiptDbSchema.ReceiptTable.Cols.UUID));
         String title = getString(getColumnIndex(ReceiptDbSchema.ReceiptTable.Cols.TITLE));
         String shop = getString(getColumnIndex(ReceiptDbSchema.ReceiptTable.Cols.SHOP)); //edit
+        String comment = getString(getColumnIndex(ReceiptDbSchema.ReceiptTable.Cols.COMMENT)); //edit2
         long date = getLong(getColumnIndex(ReceiptDbSchema.ReceiptTable.Cols.DATE));
 
         Receipt receipt = new Receipt(UUID.fromString(uuidString));
         receipt.setTitle(title);
-        receipt.setShop(shop);
+        receipt.setShop(shop); //edit
+        receipt.setComment(comment); //edit2
         receipt.setDate(new Date(date));
 
         return receipt;
