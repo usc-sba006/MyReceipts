@@ -76,6 +76,9 @@ public class ReceiptListFragment extends Fragment {
                         .newIntent(getActivity(), receipt.getId());
                 startActivity(intent);
                 return true;
+            case R.id.receipt_help:
+                Intent i = new Intent(getActivity(), HelpWebPage.class);
+                startActivity(i);
 //            case R.id.show_subtitle:
 //                mSubtitleVisible = !mSubtitleVisible;
 //                getActivity().invalidateOptionsMenu();

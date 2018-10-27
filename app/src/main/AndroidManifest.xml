@@ -6,6 +6,8 @@
         android:required="false"
         />
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -21,6 +23,10 @@
         </activity>
         <activity
             android:name="com.bignerdranch.android.myreceipts.ReceiptPagerActivity"
+            android:parentActivityName="com.bignerdranch.android.myreceipts.ReceiptListActivity">
+        </activity>
+        <activity
+            android:name="com.bignerdranch.android.myreceipts.HelpWebPage"
             android:parentActivityName="com.bignerdranch.android.myreceipts.ReceiptListActivity">
         </activity>
 
