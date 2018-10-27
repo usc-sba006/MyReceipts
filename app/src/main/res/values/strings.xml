@@ -18,4 +18,8 @@
     <string name="receipt_report">The receipt "%1$s" was received from a purchase made on %2$s.</string>
     <string name="receipt_report_subject">MyReceipts - Receipt Report</string>
     <string name="send_report">Send receipt report via</string>
+    <string name="receipt_location_label">Location</string>
+    <string name="receipt_map_label">Show In Map</string>
+    <string name="receipt_latitude">Latitude: %1$s</string>
+    <string name="receipt_longitude">Longitude: %1$s</string>
 </resources>

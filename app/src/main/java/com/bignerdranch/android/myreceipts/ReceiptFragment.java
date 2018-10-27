@@ -23,6 +23,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import java.io.File;
 import java.util.Date;
@@ -45,6 +46,9 @@ public class ReceiptFragment extends Fragment {
     private Button mReportButton;
     private ImageButton mPhotoButton;
     private ImageView mPhotoView;
+    private Button mMapButton;
+    private TextView mLatitudeView;
+    private TextView mLongitudeView;
 
     public static ReceiptFragment newInstance(UUID receiptId) {
         Bundle args = new Bundle();
@@ -191,6 +195,14 @@ public class ReceiptFragment extends Fragment {
         mPhotoView = (ImageView) v.findViewById(R.id.receipt_photo);
         updatePhotoView();
 
+        mMapButton = (Button) v.findViewById(R.id.receipt_map);
+
+        mLatitudeView = (TextView) v.findViewById(R.id.receipt_latitude);
+        updateLatitude();
+
+        mLongitudeView = (TextView) v.findViewById(R.id.receipt_longitude);
+        updateLongitude();
+
         return v;
     }
 
@@ -242,6 +254,18 @@ public class ReceiptFragment extends Fragment {
 
     private void updateDate() {
         mDateButton.setText(mReceipt.getDate().toString());
+    }
+
+    private void updateLatitude() {
+        String latitudeString = getString(R.string.receipt_latitude,
+                Long.toString(mReceipt.getLatitude()));
+        mLatitudeView.setText(latitudeString);
+    }
+
+    private void updateLongitude() {
+        String longitudeString = getString(R.string.receipt_longitude,
+                Long.toString(mReceipt.getLongitude()));
+        mLongitudeView.setText(longitudeString);
     }
 
     private String getReceiptReport() {

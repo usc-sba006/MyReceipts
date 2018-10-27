@@ -89,4 +89,39 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/receipt_report_text"/>
+
+
+    <TextView
+        style="?android:listSeparatorTextViewStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/receipt_location_label"/>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/receipt_map"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/receipt_map_label"/>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/receipt_latitude"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="latitude dummy text"/>
+            <TextView
+                android:id="@+id/receipt_longitude"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="longitude dummy text"/>
+        </LinearLayout>
+    </LinearLayout>
 </LinearLayout>

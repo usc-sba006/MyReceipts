@@ -9,6 +9,8 @@ public class Receipt {
     private String mShop; //edit
     private String mComment; //edit2
     private Date mDate;
+    private long mLatitude;
+    private long mLongitude;
 
     public UUID getId() {
         return mId;
@@ -44,6 +46,14 @@ public class Receipt {
     public void setDate(Date mDate) {
         this.mDate = mDate;
     }
+
+    public long getLatitude() { return mLatitude; }
+
+    public void setLatitude(long mLatitude) { this.mLatitude = mLatitude; }
+
+    public long getLongitude() { return mLongitude; }
+
+    public void setLongitude(long mLongitude) { this.mLongitude = mLongitude; }
 
     public String getPhotoFilename() {
         return "IMG_" + getId().toString() + ".jpg";
