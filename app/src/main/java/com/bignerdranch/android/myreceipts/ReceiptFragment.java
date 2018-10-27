@@ -1,21 +1,26 @@
 package com.bignerdranch.android.myreceipts;
 
+import android.Manifest;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.database.Cursor;
 import android.graphics.Bitmap;
+import android.location.Location;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.provider.MediaStore;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.content.FileProvider;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.text.format.DateFormat;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,6 +29,11 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.location.LocationListener;
+import com.google.android.gms.location.LocationRequest;
+import com.google.android.gms.location.LocationServices;
 
 import java.io.File;
 import java.util.Date;
@@ -50,6 +60,8 @@ public class ReceiptFragment extends Fragment {
     private TextView mLatitudeView;
     private TextView mLongitudeView;
 
+    private GoogleApiClient mClient;
+
     public static ReceiptFragment newInstance(UUID receiptId) {
         Bundle args = new Bundle();
         args.putSerializable(ARG_RECEIPT_ID, receiptId);
@@ -65,6 +77,47 @@ public class ReceiptFragment extends Fragment {
         UUID receiptId = (UUID) getArguments().getSerializable(ARG_RECEIPT_ID);
         mReceipt = ReceiptLab.get(getActivity()).getReceipt(receiptId);
         mPhotoFile = ReceiptLab.get(getActivity()).getPhotoFile(mReceipt);
+
+        mClient = new GoogleApiClient.Builder(getActivity())
+                .addApi(LocationServices.API)
+                .addConnectionCallbacks(new GoogleApiClient.ConnectionCallbacks() {
+                    @Override
+                    public void onConnected(@Nullable Bundle bundle) {
+                        LocationRequest request = LocationRequest.create();
+                        request.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
+                        request.setNumUpdates(1);
+                        request.setInterval(0);
+
+                        if (ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_FINE_LOCATION)
+                            != PackageManager.PERMISSION_GRANTED) {
+                            return;
+                        }
+
+                        LocationServices.FusedLocationApi.requestLocationUpdates(mClient, request, new LocationListener() {
+                           @Override
+                           public void onLocationChanged(Location location) {
+                               Log.i("LOCATION", "Got a fix: " + location);
+                           }
+                        });
+                    }
+
+                    @Override
+                    public void onConnectionSuspended(int i) {
+                    }
+                })
+        .build();
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        mClient.connect();
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        mClient.disconnect();
     }
 
     @Override
@@ -195,7 +248,16 @@ public class ReceiptFragment extends Fragment {
         mPhotoView = (ImageView) v.findViewById(R.id.receipt_photo);
         updatePhotoView();
 
+
         mMapButton = (Button) v.findViewById(R.id.receipt_map);
+        mMapButton.setOnClickListener(new View.OnClickListener() {
+           public void onClick(View v) {
+               Intent i = new Intent(getActivity(), MapsActivity.class);
+//               i.putExtra(Intent.EXTRA_LATITUDE, mReceipt.getLatitude());
+//               i.putExtra(Intent.EXTRA_LONGITUDE, mReceipt.getLongitude());
+               startActivity(i);
+           }
+        });
 
         mLatitudeView = (TextView) v.findViewById(R.id.receipt_latitude);
         updateLatitude();

@@ -22,4 +22,5 @@
     <string name="receipt_map_label">Show In Map</string>
     <string name="receipt_latitude">Latitude: %1$s</string>
     <string name="receipt_longitude">Longitude: %1$s</string>
+    <string name="title_activity_maps">Map</string>
 </resources>
