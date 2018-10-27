@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.bignerdranch.android.criminalintent">
+          package="com.bignerdranch.android.myreceipts">
 
     <uses-feature android:name="android.hardware.camera"
         android:required="false"
@@ -13,20 +13,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CrimeListActivity">
+        <activity android:name="com.bignerdranch.android.myreceipts.CrimeListActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:name=".CrimePagerActivity"
-            android:parentActivityName=".CrimeListActivity">
+            android:name="com.bignerdranch.android.myreceipts.CrimePagerActivity"
+            android:parentActivityName="com.bignerdranch.android.myreceipts.CrimeListActivity">
         </activity>
 
         <provider
             android:name="android.support.v4.content.FileProvider"
-            android:authorities="com.bignerdranch.android.criminalintent.fileprovider"
+            android:authorities="com.bignerdranch.android.myreceipts.fileprovider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data

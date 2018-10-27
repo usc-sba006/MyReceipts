@@ -1,4 +1,4 @@
-package com.bignerdranch.android.criminalintent;
+package com.bignerdranch.android.myreceipts;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -20,8 +20,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.CheckBox;
-import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -30,8 +28,6 @@ import java.io.File;
 import java.util.Date;
 import java.util.List;
 import java.util.UUID;
-
-import static android.widget.CompoundButton.*;
 
 public class CrimeFragment extends Fragment {
     private static final String ARG_CRIME_ID = "crime_id";
