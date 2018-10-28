@@ -1,7 +1,5 @@
 package com.bignerdranch.android.myreceipts;
 
-import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -10,6 +8,17 @@ import android.webkit.WebResourceRequest;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
+
+/**
+ * Class: HelpWebPage
+ *
+ * Created by Samuel Allan (SBA006)
+ *
+ * ICT311 (Mobile App Development)
+ * Task 2
+ * Semester 2, 2018
+ * University of the Sunshine Coast
+ */
 
 public class HelpWebPage extends AppCompatActivity {
     private WebView mWebView;

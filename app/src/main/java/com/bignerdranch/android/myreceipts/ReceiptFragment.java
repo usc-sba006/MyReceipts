@@ -40,6 +40,17 @@ import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
+/**
+ * Class: ReceiptFragment
+ *
+ * Created by Samuel Allan (SBA006)
+ *
+ * ICT311 (Mobile App Development)
+ * Task 2
+ * Semester 2, 2018
+ * University of the Sunshine Coast
+ */
+
 public class ReceiptFragment extends Fragment {
     private static final String ARG_RECEIPT_ID = "receipt_id";
     private static final String DIALOG_DATE = "DialogDate";

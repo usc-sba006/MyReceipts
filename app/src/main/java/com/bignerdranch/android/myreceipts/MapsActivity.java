@@ -1,6 +1,5 @@
 package com.bignerdranch.android.myreceipts;
 
-import android.content.Intent;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 
@@ -11,6 +10,17 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+
+/**
+ * Class: MapsActivity
+ *
+ * Created by Samuel Allan (SBA006)
+ *
+ * ICT311 (Mobile App Development)
+ * Task 2
+ * Semester 2, 2018
+ * University of the Sunshine Coast
+ */
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 

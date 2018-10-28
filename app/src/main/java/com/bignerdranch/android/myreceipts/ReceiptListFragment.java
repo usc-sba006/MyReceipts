@@ -16,6 +16,17 @@ import android.widget.TextView;
 
 import java.util.List;
 
+/**
+ * Class: ReceiptListFragment
+ *
+ * Created by Samuel Allan (SBA006)
+ *
+ * ICT311 (Mobile App Development)
+ * Task 2
+ * Semester 2, 2018
+ * University of the Sunshine Coast
+ */
+
 public class ReceiptListFragment extends Fragment {
     private static final String SAVED_SUBTITLE_VISIBLE = "subtitle";
 

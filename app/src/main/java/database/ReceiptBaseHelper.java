@@ -6,6 +6,17 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import database.ReceiptDbSchema.ReceiptTable;
 
+/**
+ * Class: ReceiptBaseHelper
+ *
+ * Created by Samuel Allan (SBA006)
+ *
+ * ICT311 (Mobile App Development)
+ * Task 2
+ * Semester 2, 2018
+ * University of the Sunshine Coast
+ */
+
 public class ReceiptBaseHelper extends SQLiteOpenHelper {
     private static final int VERSION = 1;
     private static final String DATABASE_NAME = "receiptBase.db";

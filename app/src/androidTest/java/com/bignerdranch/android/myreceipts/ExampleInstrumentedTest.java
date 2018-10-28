@@ -10,6 +10,17 @@ import org.junit.runner.RunWith;
 import static org.junit.Assert.*;
 
 /**
+ * Class: ExampleInstrumentedTest
+ *
+ * Created by Samuel Allan (SBA006)
+ *
+ * ICT311 (Mobile App Development)
+ * Task 2
+ * Semester 2, 2018
+ * University of the Sunshine Coast
+ */
+
+/**
  * Instrumentation test, which will execute on an Android device.
  *
  * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>

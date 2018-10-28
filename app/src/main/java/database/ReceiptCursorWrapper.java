@@ -8,6 +8,17 @@ import com.bignerdranch.android.myreceipts.Receipt;
 import java.util.Date;
 import java.util.UUID;
 
+/**
+ * Class: ReceiptCursorWrapper
+ *
+ * Created by Samuel Allan (SBA006)
+ *
+ * ICT311 (Mobile App Development)
+ * Task 2
+ * Semester 2, 2018
+ * University of the Sunshine Coast
+ */
+
 public class ReceiptCursorWrapper extends CursorWrapper {
     public ReceiptCursorWrapper(Cursor cursor) {
         super(cursor);

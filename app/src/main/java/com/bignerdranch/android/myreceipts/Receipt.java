@@ -3,6 +3,17 @@ package com.bignerdranch.android.myreceipts;
 import java.util.Date;
 import java.util.UUID;
 
+/**
+ * Class: Receipt
+ *
+ * Created by Samuel Allan (SBA006)
+ *
+ * ICT311 (Mobile App Development)
+ * Task 2
+ * Semester 2, 2018
+ * University of the Sunshine Coast
+ */
+
 public class Receipt {
     private UUID mId;
     private String mTitle;

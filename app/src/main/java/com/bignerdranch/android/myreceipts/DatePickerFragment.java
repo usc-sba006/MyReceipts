@@ -15,6 +15,17 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
+/**
+ * Class: DatePickerFragment
+ *
+ * Created by Samuel Allan (SBA006)
+ *
+ * ICT311 (Mobile App Development)
+ * Task 2
+ * Semester 2, 2018
+ * University of the Sunshine Coast
+ */
+
 public class DatePickerFragment extends DialogFragment {
     public static final String EXTRA_DATE =
             "com.bignerdranch.android.myreceipts.date";

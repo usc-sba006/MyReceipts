@@ -5,6 +5,17 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Point;
 
+/**
+ * Class: PictureUtils
+ *
+ * Created by Samuel Allan (SBA006)
+ *
+ * ICT311 (Mobile App Development)
+ * Task 2
+ * Semester 2, 2018
+ * University of the Sunshine Coast
+ */
+
 public class PictureUtils {
     public static Bitmap getScaledBitmap(String path, Activity activity) {
         Point size = new Point();

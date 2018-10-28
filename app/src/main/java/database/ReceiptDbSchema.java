@@ -1,5 +1,18 @@
 package database;
 
+//import
+
+/**
+ * Class: ReceiptDbSchema
+ *
+ * Created by Samuel Allan (SBA006)
+ *
+ * ICT311 (Mobile App Development)
+ * Task 2
+ * Semester 2, 2018
+ * University of the Sunshine Coast
+ */
+
 public class ReceiptDbSchema {
     public static final class ReceiptTable {
         public static final String NAME = "receipts";

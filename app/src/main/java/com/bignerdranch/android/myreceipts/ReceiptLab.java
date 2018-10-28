@@ -14,6 +14,17 @@ import database.ReceiptBaseHelper;
 import database.ReceiptCursorWrapper;
 import database.ReceiptDbSchema;
 
+/**
+ * Class: ReceiptLab
+ *
+ * Created by Samuel Allan (SBA006)
+ *
+ * ICT311 (Mobile App Development)
+ * Task 2
+ * Semester 2, 2018
+ * University of the Sunshine Coast
+ */
+
 public class ReceiptLab {
     private static ReceiptLab sReceiptLab;
 

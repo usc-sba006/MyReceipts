@@ -17,6 +17,17 @@ import com.google.android.gms.common.GoogleApiAvailability;
 import java.util.List;
 import java.util.UUID;
 
+/**
+ * Class: ReceiptPagerActivity
+ *
+ * Created by Samuel Allan (SBA006)
+ *
+ * ICT311 (Mobile App Development)
+ * Task 2
+ * Semester 2, 2018
+ * University of the Sunshine Coast
+ */
+
 public class ReceiptPagerActivity extends AppCompatActivity {
     private static final String EXTRA_RECEIPT_ID =
             "com.bignerdranch.android.myreceipts.receipt_id";
