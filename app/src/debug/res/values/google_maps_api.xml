@@ -22,3 +22,11 @@
     -->
     <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyCpOCxsPbl-tXlRIV4nzhnRibIYymdznfY</string>
 </resources>
+
+    <!--
+        List of alternative API keys:
+        AIzaSyCpOCxsPbl-tXlRIV4nzhnRibIYymdznfY      - The key provided in the Week 11 Lab notes, the only one that consistently works.
+        AIzaSyCKO9De9ty7ZZtb0VMC3ct51wCZEFxWaOk      - 1st attempt, never worked.
+        AIzaSyDLab9aQINgn-ncONMeH5CrOjWNBMKk1jE      - 2nd attempt, worked temporarily and then stopped working. Seems to be the key with the best chance of working out of the three attempts.
+        AIzaSyDSBidScVezcMsXdOK-IbxJKjn6XkDQrt0      - 3rd attempt, never worked.
+        -->
